@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { omit } from 'lodash'
 
-const useForm = () => {
+const LoginValidation = () => {
   //Form values
   const [values, setValues] = useState({})
   //Errors
@@ -11,22 +11,6 @@ const useForm = () => {
     //A function to validate each input values
 
     switch (name) {
-      case 'name':
-        if (value.length <= 4) {
-          // we will set the error state
-          setErrors({
-            ...errors,
-            username: 'First name atleast have 5 letters',
-          })
-        } else {
-          // set the error state empty or remove the error for username input
-
-          //omit function removes/omits the value from given object and returns a new object
-          let newObj = omit(errors, 'name')
-          setErrors(newObj)
-        }
-        break
-
       case 'email':
         if (
           !new RegExp(
@@ -87,4 +71,4 @@ const useForm = () => {
   }
 }
 
-export default useForm
+export default LoginValidation

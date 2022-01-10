@@ -42,7 +42,7 @@ const Signup = () => {
         })
     } else {
       alert('There is an Error!')
-    }    
+    }
   }
   return (
     <Fragment>
@@ -86,7 +86,8 @@ const Signup = () => {
                       type="password"
                       name="password"
                       className="form-control"
-                      //   onChange={handleChange}
+                      name="password"
+                      onChange={handleChange}
                     />
                     {errors.password && <h3>{errors.password}</h3>}
                   </div>

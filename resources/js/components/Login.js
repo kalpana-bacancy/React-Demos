@@ -1,38 +1,49 @@
 import React, { Fragment, useRef } from 'react'
 import ReactDOM from 'react-dom'
 import { Link, BrowserRouter, Routes, Route } from 'react-router-dom'
+import LoginValidation from './LoginValidation'
+import { useSelector, useDispatch } from 'react-redux'
+import { authActions } from '../store/auth'
 
 const Login = () => {
+  const dispatch = useDispatch()
+  const { handleChange, values, errors } = LoginValidation()
   const emailInput = useRef('')
   const passwordInput = useRef('')
   const onSubmitHandler = (e) => {
     e.preventDefault()
-    const requestOptions = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        email: emailInput.current.value,
-        password: passwordInput.current.value,
-      }),
-    }
-    fetch('http://localhost/laravel-react-js/api/login', requestOptions)
-      .then(async (response) => {
-        const isJson = response.headers
-          .get('content-type')
-          ?.includes('application/json')
-        const data = isJson && (await response.json())
+    if (Object.keys(errors).length === 0 && Object.keys(values).length !== 0) {
+      const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: emailInput.current.value,
+          password: passwordInput.current.value,
+        }),
+      }
+      fetch('http://localhost/laravel-react-js/api/login', requestOptions)
+        .then(async (response) => {
+          const isJson = response.headers
+            .get('content-type')
+            ?.includes('application/json')
+          const data = isJson && (await response.json())
 
-        // check for error response
-        if (!response.ok) {
-          // get error message from body or default to response status
-          const error = (data && data.message) || response.status
-          return Promise.reject(error)
-        }
-      })
-      .catch((error) => {
-        console.log(error)
-        console.error('There was an error!', error)
-      })
+          // check for error response
+          if (!response.ok) {
+            // get error message from body or default to response status
+            const error = (data && data.message) || response.status
+            return Promise.reject(error)
+          } else {
+            dispatch(authActions.login())
+          }
+        })
+        .catch((error) => {
+          console.log(error)
+          console.error('There was an error!', error)
+        })
+    } else {
+      alert('There is an Error!')
+    }
   }
   return (
     <Fragment>
@@ -55,15 +66,20 @@ const Login = () => {
                       name="email"
                       className="form-control"
                       ref={emailInput}
+                      onChange={handleChange}
                     />
+                    {errors.email && <h3>{errors.email}</h3>}
                   </div>
                   <div className="form-group">
                     <label className="form-control-label">PASSWORD</label>
                     <input
+                      name="password"
                       type="password"
                       className="form-control"
                       ref={passwordInput}
+                      onChange={handleChange}
                     />
+                    {errors.password && <h3>{errors.password}</h3>}
                   </div>
 
                   <div className="col-lg-12 loginbttm">
