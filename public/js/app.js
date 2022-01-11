@@ -9612,8 +9612,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap.min.css */ "./node_modules/bootstrap/dist/css/bootstrap.min.css");
 /* harmony import */ var _fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fortawesome/react-fontawesome */ "./node_modules/@fortawesome/react-fontawesome/index.es.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
 /* harmony import */ var _css_app_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../css/app.css */ "./resources/css/app.css");
 /* harmony import */ var _Login__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Login */ "./resources/js/components/Login.js");
 /* harmony import */ var _Signup__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Signup */ "./resources/js/components/Signup.js");
@@ -9622,12 +9622,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _store_index__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../store/index */ "./resources/js/store/index.js");
 /* harmony import */ var _store_auth__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../store/auth */ "./resources/js/store/auth.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _Products_ProductList__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./Products/ProductList */ "./resources/js/components/Products/ProductList.js");
+/* harmony import */ var _Products_AddProduct__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./Products/AddProduct */ "./resources/js/components/Products/AddProduct.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
 
 
 
@@ -9708,34 +9712,32 @@ function Example() {
         return _ref.apply(this, arguments);
       };
     }())["catch"](function (error) {
-      console.log(error);
       console.error('There was an error!', error);
     });
   };
 
-  console.log(isAuthenticated);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)(react__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
-    children: [!isAuthenticated && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(react__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
+    children: [!isAuthenticated && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("div", {
       className: "App",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("nav", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("nav", {
         className: "navbar navbar-expand-lg navbar-light fixed-top",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("div", {
           className: "container",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("div", {
             className: "collapse navbar-collapse",
             id: "navbarTogglerDemo02",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("ul", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("ul", {
               className: "navbar-nav ml-auto",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("li", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("li", {
                 className: "nav-item login-title",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.NavLink, {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.NavLink, {
                   className: "nav-link text-white",
                   to: '/login',
                   children: "Login"
                 })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("li", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("li", {
                 className: "nav-item login-title",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.NavLink, {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.NavLink, {
                   className: "nav-link text-white",
                   to: '/sign-up',
                   children: "Sign up"
@@ -9745,39 +9747,58 @@ function Example() {
           })
         })
       })
-    }), isAuthenticated && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
+    }), isAuthenticated && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("div", {
       className: "App",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("nav", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("nav", {
         className: "navbar navbar-expand-lg navbar-light fixed-top",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("div", {
           className: "container",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("div", {
             className: "collapse navbar-collapse",
             id: "navbarTogglerDemo02",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("ul", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("ul", {
               className: "navbar-nav ml-auto",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("li", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("li", {
                 className: "nav-item login-title",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("button", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.NavLink, {
+                  className: "nav-link text-white",
+                  to: '/products',
+                  children: "Products List"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.NavLink, {
+                  className: "nav-link text-white",
+                  to: '/add-products',
+                  children: "Add Products"
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("li", {
+                className: "nav-item login-title",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("button", {
                   onClick: onLogoutHandler,
                   children: "Logout"
                 })
-              })
+              })]
             })
           })
         })
       })
-    }), isAuthenticated && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_UserProfile__WEBPACK_IMPORTED_MODULE_8__["default"], {}), !isAuthenticated && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
+    }), isAuthenticated && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_17__.Routes, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_17__.Route, {
+        path: "/products",
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_Products_ProductList__WEBPACK_IMPORTED_MODULE_13__["default"], {})
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_17__.Route, {
+        path: "/add-products",
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_Products_AddProduct__WEBPACK_IMPORTED_MODULE_14__["default"], {})
+      })]
+    }), !isAuthenticated && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("div", {
       className: "auth-wrapper",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("div", {
         className: "auth-inner",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Routes, {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Route, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_17__.Routes, {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_17__.Route, {
             path: "/login",
-            element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_Login__WEBPACK_IMPORTED_MODULE_6__["default"], {})
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Route, {
+            element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_Login__WEBPACK_IMPORTED_MODULE_6__["default"], {})
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_17__.Route, {
             path: "/sign-up",
-            element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_Signup__WEBPACK_IMPORTED_MODULE_7__["default"], {})
+            element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_Signup__WEBPACK_IMPORTED_MODULE_7__["default"], {})
           })]
         })
       })
@@ -9788,11 +9809,11 @@ function Example() {
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Example);
 
 if (document.getElementById('example')) {
-  react_dom__WEBPACK_IMPORTED_MODULE_2__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_redux__WEBPACK_IMPORTED_MODULE_10__.Provider, {
+  react_dom__WEBPACK_IMPORTED_MODULE_2__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(react_redux__WEBPACK_IMPORTED_MODULE_10__.Provider, {
     store: _store_index__WEBPACK_IMPORTED_MODULE_11__["default"],
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.BrowserRouter, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.BrowserRouter, {
       basename: "laravel-react-js",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(Example, {})
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(Example, {})
     })
   }), document.getElementById('example'));
 }
@@ -9894,7 +9915,7 @@ var Login = function Login() {
                   return _context.abrupt("return", Promise.reject(error));
 
                 case 12:
-                  dispatch(_store_auth__WEBPACK_IMPORTED_MODULE_5__.authActions.login());
+                  dispatch(_store_auth__WEBPACK_IMPORTED_MODULE_5__.authActions.login(data.token));
 
                 case 13:
                 case "end":
@@ -10096,6 +10117,492 @@ var LoginValidation = function LoginValidation() {
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (LoginValidation);
+
+/***/ }),
+
+/***/ "./resources/js/components/Products/AddProduct.js":
+/*!********************************************************!*\
+  !*** ./resources/js/components/Products/AddProduct.js ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
+
+
+
+
+
+var AddProduct = function AddProduct() {
+  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_4__.useNavigate)();
+  var BearerToken = (0,react_redux__WEBPACK_IMPORTED_MODULE_2__.useSelector)(function (state) {
+    return state.auth.token;
+  });
+
+  var onSubmitHandler = function onSubmitHandler(e) {
+    e.preventDefault();
+    var requestOptions = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: 'Bearer ' + BearerToken
+      },
+      body: JSON.stringify({
+        name: e.target.elements.product_name.value,
+        sku: e.target.elements.sku.value,
+        price: e.target.elements.price.value,
+        quantity: e.target.elements.quantity.value
+      })
+    };
+    fetch('http://localhost/laravel-react-js/api/products/create', requestOptions).then( /*#__PURE__*/function () {
+      var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee(response) {
+        var _response$headers$get;
+
+        var isJson, data, error;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                isJson = (_response$headers$get = response.headers.get('content-type')) === null || _response$headers$get === void 0 ? void 0 : _response$headers$get.includes('application/json');
+                _context.t0 = isJson;
+
+                if (!_context.t0) {
+                  _context.next = 6;
+                  break;
+                }
+
+                _context.next = 5;
+                return response.json();
+
+              case 5:
+                _context.t0 = _context.sent;
+
+              case 6:
+                data = _context.t0;
+
+                if (response.ok) {
+                  _context.next = 10;
+                  break;
+                }
+
+                // get error message from body or default to response status
+                error = data && data.message || response.status;
+                return _context.abrupt("return", Promise.reject(error));
+
+              case 10:
+                console.log(data);
+                alert('Product Added Sucessfully!');
+                navigate('/products');
+
+              case 13:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }));
+
+      return function (_x) {
+        return _ref.apply(this, arguments);
+      };
+    }())["catch"](function (error) {
+      console.log(error);
+      console.error('There was an error!', error);
+    });
+  };
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      className: "container",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        className: "row",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          className: "col-lg-3 col-md-2"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          className: "col-lg-6 col-md-8 login-box",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+            className: "col-lg-12 login-key",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("i", {
+              className: "fa fa-key",
+              "aria-hidden": "true"
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+            className: "col-lg-12 login-title",
+            children: "ADD NEW PRODUCT"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+            className: "col-lg-12 login-form",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+              className: "col-lg-12 login-form",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("form", {
+                onSubmit: onSubmitHandler,
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                  className: "form-group",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                    className: "form-control-label",
+                    children: "NAME"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                    type: "text",
+                    name: "product_name",
+                    className: "form-control" //   onChange={handleChange}
+
+                  })]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                  className: "form-group",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                    className: "form-control-label",
+                    children: "SKU"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                    type: "text",
+                    name: "sku",
+                    className: "form-control" //   onChange={handleChange}
+
+                  })]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                  className: "form-group",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                    className: "form-control-label",
+                    children: "PRICE"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                    type: "number",
+                    name: "price",
+                    className: "form-control" //   onChange={handleChange}
+
+                  })]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                  className: "form-group",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                    className: "form-control-label",
+                    children: "QUANTITY"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                    type: "number",
+                    name: "quantity",
+                    className: "form-control"
+                  })]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                  className: "col-lg-12 loginbttm",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+                    className: "col-lg-6 login-btm login-text"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+                    className: "col-lg-6 login-btm login-button",
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+                      type: "submit",
+                      className: "btn btn-outline-primary",
+                      children: "ADD"
+                    })
+                  })]
+                })]
+              })
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+            className: "col-lg-3 col-md-2"
+          })]
+        })]
+      })
+    })
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AddProduct);
+
+/***/ }),
+
+/***/ "./resources/js/components/Products/Product.js":
+/*!*****************************************************!*\
+  !*** ./resources/js/components/Products/Product.js ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _store_products__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../store/products */ "./resources/js/store/products.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
+
+
+
+
+
+var Product = function Product(props) {
+  var BearerToken = (0,react_redux__WEBPACK_IMPORTED_MODULE_2__.useSelector)(function (state) {
+    return state.auth.token;
+  });
+
+  var deleteProduct = function deleteProduct() {
+    var requestOptions = {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: 'Bearer ' + BearerToken
+      }
+    };
+    fetch('http://localhost/laravel-react-js/api/products/delete/' + props.id, requestOptions).then( /*#__PURE__*/function () {
+      var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee(response) {
+        var _response$headers$get;
+
+        var isJson, data, error;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                isJson = (_response$headers$get = response.headers.get('content-type')) === null || _response$headers$get === void 0 ? void 0 : _response$headers$get.includes('application/json');
+                _context.t0 = isJson;
+
+                if (!_context.t0) {
+                  _context.next = 6;
+                  break;
+                }
+
+                _context.next = 5;
+                return response.json();
+
+              case 5:
+                _context.t0 = _context.sent;
+
+              case 6:
+                data = _context.t0;
+
+                if (response.ok) {
+                  _context.next = 10;
+                  break;
+                }
+
+                // get error message from body or default to response status
+                error = data && data.message || response.status;
+                return _context.abrupt("return", Promise.reject(error));
+
+              case 10:
+                alert('Product Deleted Sucessfully!');
+                dispatch(_store_products__WEBPACK_IMPORTED_MODULE_3__.productsActions.removeProducts({
+                  id: props.id
+                }));
+                navigate('/products');
+
+              case 13:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }));
+
+      return function (_x) {
+        return _ref.apply(this, arguments);
+      };
+    }())["catch"](function (error) {
+      console.log(error);
+      console.error('There was an error!', error);
+    });
+  };
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+    className: "product",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+      className: "image-box",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+        className: "images",
+        id: 'image-' + props.id
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+      className: "text-box",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h2", {
+        className: "item",
+        children: props.name
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("h3", {
+        className: "price",
+        children: ["$", props.price]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+        className: "description",
+        children: "A bag of delicious oranges!"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("label", {
+        htmlFor: "item-1-quantity",
+        children: ["Quantity:", props.quantity]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+        type: "button",
+        onClick: deleteProduct,
+        className: "btn btn-outline-primary",
+        name: "item-1-button",
+        id: "item-1-button",
+        children: "Remove Product"
+      })]
+    })]
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Product);
+
+/***/ }),
+
+/***/ "./resources/js/components/Products/ProductList.js":
+/*!*********************************************************!*\
+  !*** ./resources/js/components/Products/ProductList.js ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _ProductsList_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ProductsList.css */ "./resources/js/components/Products/ProductsList.css");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _Product__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Product */ "./resources/js/components/Products/Product.js");
+/* harmony import */ var _store_products__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../store/products */ "./resources/js/store/products.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+
+var ProductsList = function ProductsList() {
+  var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_3__.useDispatch)();
+  var BearerToken = (0,react_redux__WEBPACK_IMPORTED_MODULE_3__.useSelector)(function (state) {
+    return state.auth.token;
+  });
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
+      _useState2 = _slicedToArray(_useState, 2),
+      ProductsData = _useState2[0],
+      setProductsData = _useState2[1];
+
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+    var requestOptions = {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: 'Bearer ' + BearerToken
+      }
+    };
+    fetch('http://localhost/laravel-react-js/api/products', requestOptions).then( /*#__PURE__*/function () {
+      var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee(response) {
+        var _response$headers$get;
+
+        var isJson, data, error;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                isJson = (_response$headers$get = response.headers.get('content-type')) === null || _response$headers$get === void 0 ? void 0 : _response$headers$get.includes('application/json');
+                _context.t0 = isJson;
+
+                if (!_context.t0) {
+                  _context.next = 6;
+                  break;
+                }
+
+                _context.next = 5;
+                return response.json();
+
+              case 5:
+                _context.t0 = _context.sent;
+
+              case 6:
+                data = _context.t0;
+
+                if (response.ok) {
+                  _context.next = 12;
+                  break;
+                }
+
+                // get error message from body or default to response status
+                error = data && data.message || response.status;
+                return _context.abrupt("return", Promise.reject(error));
+
+              case 12:
+                dispatch(_store_products__WEBPACK_IMPORTED_MODULE_5__.productsActions.getProducts({
+                  data: data.data
+                }));
+                setProductsData(data);
+
+              case 14:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }));
+
+      return function (_x) {
+        return _ref.apply(this, arguments);
+      };
+    }())["catch"](function (error) {
+      console.log(error);
+      console.error('There was an error!', error);
+    });
+  }, []);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+      className: "Products__List",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+        className: "listing-section",
+        children: [ProductsData && ProductsData.map(function (product) {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Product__WEBPACK_IMPORTED_MODULE_4__["default"], {
+            id: product.id,
+            name: product.name,
+            price: product.price,
+            quantity: product.quantity
+          }, product.id);
+        }), !ProductsData && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("p", {
+          children: "No Data Found!"
+        })]
+      })
+    })
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ProductsList);
 
 /***/ }),
 
@@ -10477,18 +10984,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @reduxjs/toolkit */ "./node_modules/@reduxjs/toolkit/dist/redux-toolkit.esm.js");
 
 var initialAuthState = {
-  isAuthenticated: false
+  isAuthenticated: false,
+  token: ''
 };
 var authSlice = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__.createSlice)({
   name: 'auth',
   initialState: initialAuthState,
   reducers: {
-    login: function login(state) {
-      state.isAuthenticated = true;
-      console.log(state.isAuthenticated);
+    login: function login(state, action) {
+      state.isAuthenticated = true, state.token = action.payload;
     },
     logout: function logout(state) {
-      state.isAuthenticated = false;
+      state.isAuthenticated = false, state.token = false;
     }
   }
 });
@@ -10518,6 +11025,43 @@ var store = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_1__.configureStore)({
   }
 });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (store);
+
+/***/ }),
+
+/***/ "./resources/js/store/products.js":
+/*!****************************************!*\
+  !*** ./resources/js/store/products.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "productsActions": () => (/* binding */ productsActions),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @reduxjs/toolkit */ "./node_modules/@reduxjs/toolkit/dist/redux-toolkit.esm.js");
+
+var initialAuthState = {
+  ProductsData: []
+};
+var productsSlice = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__.createSlice)({
+  name: 'auth',
+  initialState: initialAuthState,
+  reducers: {
+    getProducts: function getProducts(state, action) {
+      state.ProductsData = action.payload;
+      console.log(state.ProductsData);
+    },
+    removeProducts: function removeProducts(state, action) {
+      state.ProductsData = state.ProductsData.filter(function (product) {
+        return product.id !== action.id;
+      });
+    }
+  }
+});
+var productsActions = productsSlice.actions;
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (productsSlice.reducer);
 
 /***/ }),
 
@@ -15613,7 +16157,31 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\r\n  background: #222d32;\r\n  font-family: 'Roboto', sans-serif;\r\n  color: white;\r\n}\r\n\r\n.login-box {\r\n  margin-top: 75px;\r\n  height: auto;\r\n  background: #1a2226;\r\n  text-align: center;\r\n  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);\r\n}\r\n\r\n.login-key {\r\n  height: 100px;\r\n  font-size: 80px;\r\n  line-height: 100px;\r\n  background: -webkit-linear-gradient(#27ef9f, #0db8de);\r\n  -webkit-background-clip: text;\r\n  -webkit-text-fill-color: transparent;\r\n}\r\n\r\n.login-title {\r\n  margin-top: 15px;\r\n  text-align: center;\r\n  font-size: 30px;\r\n  letter-spacing: 2px;\r\n  margin-top: 15px;\r\n  font-weight: bold;\r\n  color: #ecf0f5;\r\n}\r\n\r\n.login-form {\r\n  margin-top: 25px;\r\n  text-align: left;\r\n}\r\n\r\ninput[type='text'] {\r\n  background-color: #1a2226;\r\n  border: none;\r\n  border-bottom: 2px solid #0db8de;\r\n  border-top: 0px;\r\n  border-radius: 0px;\r\n  font-weight: bold;\r\n  outline: 0;\r\n  margin-bottom: 20px;\r\n  padding-left: 0px;\r\n  color: #ecf0f5;\r\n}\r\n\r\ninput[type='password'] {\r\n  background-color: #1a2226;\r\n  border: none;\r\n  border-bottom: 2px solid #0db8de;\r\n  border-top: 0px;\r\n  border-radius: 0px;\r\n  font-weight: bold;\r\n  outline: 0;\r\n  padding-left: 0px;\r\n  margin-bottom: 20px;\r\n  color: #ecf0f5;\r\n}\r\n\r\n.form-group {\r\n  margin-bottom: 40px;\r\n  outline: 0px;\r\n}\r\n\r\n.form-control:focus {\r\n  border-color: inherit;\r\n  box-shadow: none;\r\n  border-bottom: 2px solid #0db8de;\r\n  outline: 0;\r\n  background-color: #1a2226;\r\n  color: #ecf0f5;\r\n}\r\n\r\ninput:focus {\r\n  outline: none;\r\n  box-shadow: 0 0 0;\r\n}\r\n\r\nlabel {\r\n  margin-bottom: 0px;\r\n}\r\n\r\n.form-control-label {\r\n  font-size: 10px;\r\n  color: #6c6c6c;\r\n  font-weight: bold;\r\n  letter-spacing: 1px;\r\n}\r\n\r\n.btn-outline-primary {\r\n  border-color: #0db8de;\r\n  color: #0db8de;\r\n  border-radius: 0px;\r\n  font-weight: bold;\r\n  letter-spacing: 1px;\r\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);\r\n}\r\n\r\n.btn-outline-primary:hover {\r\n  background-color: #0db8de;\r\n  right: 0px;\r\n}\r\n\r\n.login-btm {\r\n  float: left;\r\n}\r\n\r\n.login-button {\r\n  padding-right: 0px;\r\n  text-align: right;\r\n  margin-bottom: 25px;\r\n}\r\n\r\n.login-text {\r\n  text-align: left;\r\n  padding-left: 0px;\r\n  color: #a2a4a4;\r\n}\r\n\r\n.loginbttm {\r\n  padding: 0px;\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\r\n  background: #222d32;\r\n  font-family: 'Roboto', sans-serif;\r\n  color: white;\r\n}\r\n\r\n.login-box {\r\n  margin-top: 75px;\r\n  height: auto;\r\n  background: #1a2226;\r\n  text-align: center;\r\n  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);\r\n}\r\n\r\n.login-key {\r\n  height: 100px;\r\n  font-size: 80px;\r\n  line-height: 100px;\r\n  background: -webkit-linear-gradient(#27ef9f, #0db8de);\r\n  -webkit-background-clip: text;\r\n  -webkit-text-fill-color: transparent;\r\n}\r\n\r\n.login-title {\r\n  margin-top: 15px;\r\n  text-align: center;\r\n  font-size: 30px;\r\n  letter-spacing: 2px;\r\n  margin-top: 15px;\r\n  font-weight: bold;\r\n  color: #ecf0f5;\r\n}\r\n\r\n.login-form {\r\n  margin-top: 25px;\r\n  text-align: left;\r\n}\r\n\r\ninput[type='text'] {\r\n  background-color: #1a2226;\r\n  border: none;\r\n  border-bottom: 2px solid #0db8de;\r\n  border-top: 0px;\r\n  border-radius: 0px;\r\n  font-weight: bold;\r\n  outline: 0;\r\n  margin-bottom: 20px;\r\n  padding-left: 0px;\r\n  color: #ecf0f5;\r\n}\r\n\r\ninput[type='number'] {\r\n  background-color: #1a2226;\r\n  border: none;\r\n  border-bottom: 2px solid #0db8de;\r\n  border-top: 0px;\r\n  border-radius: 0px;\r\n  font-weight: bold;\r\n  outline: 0;\r\n  margin-bottom: 20px;\r\n  padding-left: 0px;\r\n  color: #ecf0f5;\r\n}\r\n\r\ninput[type='password'] {\r\n  background-color: #1a2226;\r\n  border: none;\r\n  border-bottom: 2px solid #0db8de;\r\n  border-top: 0px;\r\n  border-radius: 0px;\r\n  font-weight: bold;\r\n  outline: 0;\r\n  padding-left: 0px;\r\n  margin-bottom: 20px;\r\n  color: #ecf0f5;\r\n}\r\n\r\n.form-group {\r\n  margin-bottom: 40px;\r\n  outline: 0px;\r\n}\r\n\r\n.form-control:focus {\r\n  border-color: inherit;\r\n  box-shadow: none;\r\n  border-bottom: 2px solid #0db8de;\r\n  outline: 0;\r\n  background-color: #1a2226;\r\n  color: #ecf0f5;\r\n}\r\n\r\ninput:focus {\r\n  outline: none;\r\n  box-shadow: 0 0 0;\r\n}\r\n\r\nlabel {\r\n  margin-bottom: 0px;\r\n}\r\n\r\n.form-control-label {\r\n  font-size: 10px;\r\n  color: #6c6c6c;\r\n  font-weight: bold;\r\n  letter-spacing: 1px;\r\n}\r\n\r\n.btn-outline-primary {\r\n  border-color: #0db8de;\r\n  color: #0db8de;\r\n  border-radius: 0px;\r\n  font-weight: bold;\r\n  letter-spacing: 1px;\r\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);\r\n}\r\n\r\n.btn-outline-primary:hover {\r\n  background-color: #0db8de;\r\n  right: 0px;\r\n}\r\n\r\n.login-btm {\r\n  float: left;\r\n}\r\n\r\n.login-button {\r\n  padding-right: 0px;\r\n  text-align: right;\r\n  margin-bottom: 25px;\r\n}\r\n\r\n.login-text {\r\n  text-align: left;\r\n  padding-left: 0px;\r\n  color: #a2a4a4;\r\n}\r\n\r\n.loginbttm {\r\n  padding: 0px;\r\n}\r\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/Products/ProductsList.css":
+/*!*********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/Products/ProductsList.css ***!
+  \*********************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".Products__List * {\r\n  padding: 0;\r\n  margin: 0;\r\n  position: relative;\r\n  box-sizing: border-box;\r\n}\r\n\r\n.Products__List .listing-section,\r\n.cart-section {\r\n  width: 100%;\r\n  float: left;\r\n  padding: 1%;\r\n  border-bottom: 0.01em solid #dddbdb;\r\n}\r\n\r\n.Products__List .product {\r\n  float: left;\r\n  width: 23%;\r\n  border-radius: 2%;\r\n  margin: 1%;\r\n}\r\n\r\n.Products__List .product:hover {\r\n  box-shadow: 1.5px 1.5px 2.5px 3px rgba(0, 0, 0, 0.4);\r\n  -webkit-box-shadow: 1.5px 1.5px 2.5px 3px rgba(0, 0, 0, 0.4);\r\n  -moz-box-shadow: 1.5px 1.5px 2.5px 3px rgba(0, 0, 0, 0.4);\r\n}\r\n\r\n.Products__List .image-box {\r\n  width: 100%;\r\n  overflow: hidden;\r\n  border-radius: 2% 2% 0 0;\r\n}\r\n\r\n.Products__List .images {\r\n  height: 15em;\r\n  background-size: cover;\r\n  background-position: center center;\r\n  background-repeat: no-repeat;\r\n  border-radius: 2% 2% 0 0;\r\n  transition: all 1s ease;\r\n  -moz-transition: all 1s ease;\r\n  -ms-transition: all 1s ease;\r\n  -webkit-transition: all 1s ease;\r\n  -o-transition: all 1s ease;\r\n}\r\n\r\n.Products__List .images:hover {\r\n  transform: scale(1.2);\r\n  overflow: hidden;\r\n  border-radius: 2%;\r\n}\r\n\r\n/* IMAGES */\r\n#image-1 {\r\n  background-image: url('https://sc01.alicdn.com/kf/UT8.CaXX2NXXXagOFbXC/fresh-navel-oranges.jpg');\r\n}\r\n\r\n#image-2 {\r\n  background-image: url('https://newenglandapples.files.wordpress.com/2014/10/img_5595.jpg');\r\n}\r\n\r\n#image-3 {\r\n  background-image: url('https://sc01.alicdn.com/kf/UT8ovSIXQNaXXagOFbXt/Fresh-Passion-Fruit-with-Best-Price-and.jpg');\r\n}\r\n\r\n#image-4 {\r\n  background-image: url('http://www.foodmatters.com/media/images/articles/16-powerful-reasons-to-eat-pineapple.jpg');\r\n}\r\n\r\n#image-5 {\r\n  background-image: url('http://membrillo.com.au/wp-content/uploads/2016/11/bg-mango-01.jpg');\r\n}\r\n\r\n#image-6 {\r\n  background-image: url('http://ell.h-cdn.co/assets/16/27/980x490/landscape-1467750721-gettyimages-146896572.jpg');\r\n}\r\n\r\n#image-7 {\r\n  background-image: url('http://www.hesca.org/wp-content/uploads/2016/08/banana.jpg');\r\n}\r\n\r\n#image-8 {\r\n  background-image: url('http://www.baag.com.au/pictures/produce/plums2.jpg');\r\n}\r\n\r\n#image-9 {\r\n  background-image: url('https://ecowatchroar-img.rbl.ms/simage/https%3A%2F%2Fassets.rbl.ms%2F9458277%2F1200x600.jpg/2000%2C2000/J9vl96eLQCOEy3Xy/img.jpg');\r\n}\r\n\r\n#image-10 {\r\n  background-image: url('https://www.parhlo.com/wp-content/uploads/2016/04/Valencia_market_-_lemons-1940x1454.jpg');\r\n}\r\n\r\n.Products__List .text-box {\r\n  width: 100%;\r\n  float: left;\r\n  border: 0.01em solid #dddbdb;\r\n  border-radius: 0 0 2% 2%;\r\n  padding: 1em;\r\n}\r\n\r\n.Products__List h2,\r\n.Products__List h3 {\r\n  float: left;\r\n  font-family: 'Roboto', sans-serif;\r\n  font-weight: 400;\r\n  font-size: 1em;\r\n  text-transform: uppercase;\r\n  margin: 0.2em auto;\r\n}\r\n\r\n.Products__List .item,\r\n.Products__List .price {\r\n  clear: left;\r\n  width: 100%;\r\n  text-align: center;\r\n}\r\n\r\n.Products__List .price {\r\n  color: Grey;\r\n}\r\n\r\n.Products__List .description,\r\n.Products__List label,\r\n.Products__List button,\r\n.Products__List input {\r\n  float: left;\r\n  clear: left;\r\n  width: 100%;\r\n  font-family: 'Roboto', sans-serif;\r\n  font-weight: 300;\r\n  font-size: 1em;\r\n  text-align: center;\r\n  margin: 0.2em auto;\r\n}\r\n\r\n.Products__List input:focus {\r\n  outline-color: #fdf;\r\n}\r\n\r\n.Products__List label {\r\n  width: 60%;\r\n}\r\n\r\n.Products__List .text-box input {\r\n  width: 15%;\r\n  clear: none;\r\n}\r\n\r\n.Products__List .text-box button {\r\n  margin-top: 1em;\r\n}\r\n\r\n.Products__List button {\r\n  padding: 2%;\r\n  background-color: #dfd;\r\n  border: none;\r\n  border-radius: 2%;\r\n}\r\n\r\n.Products__List button:hover {\r\n  bottom: 0.1em;\r\n}\r\n\r\n.Products__List button:focus {\r\n  outline: 0;\r\n}\r\n\r\n.Products__List button:active {\r\n  bottom: 0;\r\n  background-color: #fdf;\r\n}\r\n\r\n.Products__List .table-heading,\r\n.Products__List .table-content {\r\n  width: 75%;\r\n  margin: 1% 12.25%;\r\n  float: left;\r\n  background-color: #dfd;\r\n}\r\n\r\n.Products__List .table-heading h2 {\r\n  padding: 1%;\r\n  margin: 0;\r\n  text-align: center;\r\n}\r\n\r\n.Products__List .cart-product {\r\n  width: 50%;\r\n  float: left;\r\n}\r\n\r\n.Products__List .cart-price {\r\n  width: 15%;\r\n  float: left;\r\n}\r\n\r\n.Products__List .cart-quantity {\r\n  width: 10%;\r\n  float: left;\r\n}\r\n\r\n.Products__List .cart-total {\r\n  width: 25%;\r\n  float: left;\r\n}\r\n\r\n.Products__List .cart-image-box {\r\n  width: 20%;\r\n  overflow: hidden;\r\n  border-radius: 2%;\r\n  float: left;\r\n  margin: 1%;\r\n}\r\n\r\n.Products__List .cart-images {\r\n  height: 7em;\r\n  background-size: cover;\r\n  background-position: center center;\r\n  background-repeat: no-repeat;\r\n}\r\n\r\n.Products__List .cart-item {\r\n  width: 20%;\r\n  float: left;\r\n  margin: 3.2em 1%;\r\n  text-align: center;\r\n}\r\n.Products__List .cart-description {\r\n  width: 53%;\r\n  float: left;\r\n  margin: 3.2em 1%;\r\n  font-family: 'Roboto', sans-serif;\r\n  font-weight: 300;\r\n  font-size: 1em;\r\n  text-align: center;\r\n}\r\n\r\n.Products__List .cart-price h3,\r\n.Products__List .cart-total h3 {\r\n  margin: 3.2em 5% 3.2em 20%;\r\n  width: 60%;\r\n}\r\n\r\n.Products__List .cart-quantity input {\r\n  margin: 3.2em 1%;\r\n  border: none;\r\n}\r\n\r\n.Products__List .remove {\r\n  width: 10%;\r\n  margin: 1px;\r\n  float: right;\r\n  clear: right;\r\n}\r\n\r\n.Products__List .coupon {\r\n  width: 20%;\r\n  background-color: #dfd;\r\n  margin: 1% 1% 1% 12.25%;\r\n  float: left;\r\n  height: 6em;\r\n}\r\n\r\n.Products__List .coupon input {\r\n  width: 60%;\r\n  border: none;\r\n  margin: 12.75% 5%;\r\n  padding: 1%;\r\n}\r\n\r\n.Products__List .coupon button {\r\n  width: 25%;\r\n  float: left;\r\n  clear: right;\r\n  margin: 12% 5% 12% 0;\r\n}\r\n\r\n.Products__List .keep-shopping {\r\n  width: 15%;\r\n  height: 6em;\r\n  float: left;\r\n  margin: 1% auto;\r\n  padding: 1%;\r\n  background-color: #dfd;\r\n}\r\n\r\n.Products__List .keep-shopping button {\r\n  text-transform: uppercase;\r\n  margin: 12% auto;\r\n}\r\n\r\n.Products__List .checkout {\r\n  width: 37.25%;\r\n  margin: 1% 12.75% 1% 1%;\r\n  float: right;\r\n  background-color: #dfd;\r\n  height: 6em;\r\n}\r\n\r\n.Products__List .checkout button {\r\n  width: 30%;\r\n  clear: none;\r\n  margin: 5.4% 0 5.4% 5.5%;\r\n  text-transform: uppercase;\r\n}\r\n\r\n.Products__List .final-cart-total {\r\n  width: 15%;\r\n  float: right;\r\n  margin: 7%;\r\n  background-color: White;\r\n}\r\n\r\n.Products__List .final-cart-total h3 {\r\n  color: Black;\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -70725,6 +71293,36 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Login_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
+/***/ "./resources/js/components/Products/ProductsList.css":
+/*!***********************************************************!*\
+  !*** ./resources/js/components/Products/ProductsList.css ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_ProductsList_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./ProductsList.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/Products/ProductsList.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_ProductsList_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_ProductsList_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
 
 /***/ }),
 

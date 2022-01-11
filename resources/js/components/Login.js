@@ -34,7 +34,7 @@ const Login = () => {
             const error = (data && data.message) || response.status
             return Promise.reject(error)
           } else {
-            dispatch(authActions.login())
+            dispatch(authActions.login(data.token))
           }
         })
         .catch((error) => {

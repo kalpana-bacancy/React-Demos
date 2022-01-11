@@ -11,6 +11,8 @@ import './Login.css'
 import { useSelector, Provider, useDispatch } from 'react-redux'
 import store from '../store/index'
 import { authActions } from '../store/auth'
+import ProductsList from './Products/ProductList'
+import AddProduct from './Products/AddProduct'
 
 function Example() {
   const dispatch = useDispatch()
@@ -37,11 +39,9 @@ function Example() {
         }
       })
       .catch((error) => {
-        console.log(error)
         console.error('There was an error!', error)
       })
   }
-  console.log(isAuthenticated)
   return (
     <Fragment>
       {!isAuthenticated && (
@@ -79,6 +79,20 @@ function Example() {
               >
                 <ul className="navbar-nav ml-auto">
                   <li className="nav-item login-title">
+                    <NavLink
+                      className="nav-link text-white"
+                      to={'/products'}
+                    >
+                      Products List
+                    </NavLink>
+                    <NavLink
+                      className="nav-link text-white"
+                      to={'/add-products'}
+                    >
+                      Add Products
+                    </NavLink>
+                  </li>
+                  <li className="nav-item login-title">
                     <button onClick={onLogoutHandler}>Logout</button>
                   </li>
                 </ul>
@@ -87,7 +101,13 @@ function Example() {
           </nav>
         </div>
       )}
-      {isAuthenticated && <UserProfile />}
+      {/* {isAuthenticated && <ProductsList />} */}
+      {isAuthenticated && (
+        <Routes>
+          <Route path="/products" element={<ProductsList />} />
+          <Route path="/add-products" element={<AddProduct />} />
+        </Routes>
+      )}
       {!isAuthenticated && (
         <div className="auth-wrapper">
           <div className="auth-inner">
