@@ -1,8 +1,10 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { productsActions } from '../../store/products'
+import { useNavigate, NavLink } from 'react-router-dom'
 
 const Product = (props) => {
+  let navigate = useNavigate()
   const BearerToken = useSelector((state) => state.auth.token)
   const dispatch = useDispatch()
   const deleteProduct = () => {
@@ -34,7 +36,6 @@ const Product = (props) => {
         navigate('/products')
       })
       .catch((error) => {
-        console.log(error)
         console.error('There was an error!', error)
       })
   }
@@ -48,6 +49,12 @@ const Product = (props) => {
         <h3 className="price">${props.price}</h3>
         <p className="description">A bag of delicious oranges!</p>
         <label htmlFor="item-1-quantity">Quantity:{props.quantity}</label>
+        <NavLink
+          className="btn btn-outline-primary"
+          to={'/update-product/' + props.id}
+        >
+          Edit
+        </NavLink>
         <button
           type="button"
           onClick={deleteProduct}
@@ -55,7 +62,7 @@ const Product = (props) => {
           name="item-1-button"
           id="item-1-button"
         >
-          Remove Product
+          Remove
         </button>
       </div>
     </div>

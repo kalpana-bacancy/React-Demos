@@ -34,7 +34,6 @@ const ProductsList = () => {
         }
       })
       .catch((error) => {
-        console.log(error)
         console.error('There was an error!', error)
       })
   }, [])

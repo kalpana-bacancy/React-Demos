@@ -13,6 +13,7 @@ import store from '../store/index'
 import { authActions } from '../store/auth'
 import ProductsList from './Products/ProductList'
 import AddProduct from './Products/AddProduct'
+import EditProduct from './Products/EditProduct'
 
 function Example() {
   const dispatch = useDispatch()
@@ -79,10 +80,7 @@ function Example() {
               >
                 <ul className="navbar-nav ml-auto">
                   <li className="nav-item login-title">
-                    <NavLink
-                      className="nav-link text-white"
-                      to={'/products'}
-                    >
+                    <NavLink className="nav-link text-white" to={'/products'}>
                       Products List
                     </NavLink>
                     <NavLink
@@ -106,6 +104,7 @@ function Example() {
         <Routes>
           <Route path="/products" element={<ProductsList />} />
           <Route path="/add-products" element={<AddProduct />} />
+          <Route path="/update-product/:productId" element={<EditProduct />} />
         </Routes>
       )}
       {!isAuthenticated && (

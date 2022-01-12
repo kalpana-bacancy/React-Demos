@@ -97,8 +97,15 @@ class ProductController extends Controller
                 400
             );
         }
-
-        return $product;
+        //Product created, return success response
+        return response()->json(
+            [
+                'success' => true,
+                'message' => 'Get product successfully',
+                'data' => $product,
+            ],
+            Response::HTTP_OK
+        );
     }
 
     /**
