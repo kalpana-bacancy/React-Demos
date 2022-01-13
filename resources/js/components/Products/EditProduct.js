@@ -1,6 +1,8 @@
 import React, { Fragment, useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
+import * as constants from '../../config/constants'
+import { useApi } from '../../config/useApi'
 
 const EditProduct = (props) => {
   const navigate = useNavigate()
@@ -16,75 +18,29 @@ const EditProduct = (props) => {
   const [ProductsData, setProductsData] = useState(InitialProductsData)
 
   useEffect(() => {
-    const requestOptions = {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: 'Bearer ' + BearerToken,
+    useApi('products/show/' + params.productId, 'GET', false, BearerToken).then(
+      (data) => {
+        setProductsData(data.data)
       },
-    }
-    fetch(
-      'http://localhost/laravel-react-js/api/products/show/' + params.productId,
-      requestOptions,
     )
-      .then(async (response) => {
-        const isJson = response.headers
-          .get('content-type')
-          ?.includes('application/json')
-        const data = isJson && (await response.json())
-
-        // check for error response
-        if (!response.ok) {
-          // get error message from body or default to response status
-          const error = (data && data.message) || response.status
-          return Promise.reject(error)
-        } else {
-          setProductsData(data.data)
-        }
-      })
-      .catch((error) => {
-        console.error('There was an error!', error)
-      })
   }, [])
   const onSubmitHandler = (e) => {
     e.preventDefault()
-    const putRequestOptions = {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: 'Bearer ' + BearerToken,
-      },
-      body: JSON.stringify({
-        name: e.target.elements.product_name.value,
-        sku: e.target.elements.sku.value,
-        price: e.target.elements.price.value,
-        quantity: e.target.elements.quantity.value,
-      }),
+    const body = {
+      name: e.target.elements.product_name.value,
+      sku: e.target.elements.sku.value,
+      price: e.target.elements.price.value,
+      quantity: e.target.elements.quantity.value,
     }
-    fetch(
-      'http://localhost/laravel-react-js/api/products/update/' +
-        params.productId,
-      putRequestOptions,
-    )
-      .then(async (response) => {
-        const isJson = response.headers
-          .get('content-type')
-          ?.includes('application/json')
-        const data = isJson && (await response.json())
-
-        // check for error response
-        if (!response.ok) {
-          // get error message from body or default to response status
-          const error = (data && data.message) || response.status
-          return Promise.reject(error)
-        }
-        alert('Product Update Sucessfully!')
-        navigate('/products')
-      })
-      .catch((error) => {
-        console.log(error)
-        console.error('There was an error!', error)
-      })
+    useApi(
+      'products/update/' + params.productId,
+      'PUT',
+      body,
+      BearerToken,
+    ).then((data) => {
+      alert('Product Update Sucessfully!')
+      navigate('/products')
+    })
   }
   const handleInputChange = (e) => {
     const { name, value } = e.target
@@ -93,7 +49,6 @@ const EditProduct = (props) => {
       [name]: value,
     })
   }
-  console.log(ProductsData)
   return (
     <Fragment>
       {ProductsData && (

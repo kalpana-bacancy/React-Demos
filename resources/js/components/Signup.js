@@ -2,44 +2,22 @@ import React, { Fragment, useRef } from 'react'
 import ReactDOM from 'react-dom'
 import { Link, BrowserRouter, Routes, Route } from 'react-router-dom'
 import useForm from './UseForm'
+import * as constants from '../config/constants'
+import { useApi } from '../config/useApi'
 
 const Signup = () => {
   const { handleChange, values, errors } = useForm()
   const onSubmitHandler = (e) => {
     e.preventDefault()
     if (Object.keys(errors).length === 0 && Object.keys(values).length !== 0) {
-      console.log('Callback function when form is submitted!')
-      console.log('Form Values ', values)
-      const requestOptions = {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: e.target.elements.name.value,
-          email: e.target.elements.email.value,
-          password: e.target.elements.password.value,
-        }),
+      const body = {
+        name: e.target.elements.name.value,
+        email: e.target.elements.email.value,
+        password: e.target.elements.password.value,
       }
-      fetch('http://localhost/laravel-react-js/api/register', requestOptions)
-        .then(async (response) => {
-          const isJson = response.headers
-            .get('content-type')
-            ?.includes('application/json')
-          const data = isJson && (await response.json())
-
-          // check for error response
-          if (!response.ok) {
-            // get error message from body or default to response status
-            const error = (data && data.message) || response.status
-            return Promise.reject(error)
-          }
-
-          console.log(data)
-          alert('Registration Done Sucessfully!')
-        })
-        .catch((error) => {
-          console.log(error)
-          console.error('There was an error!', error)
-        })
+      useApi('register', 'POST', body, false).then((data) => {
+        alert('Registration Done Sucessfully!')
+      })
     } else {
       alert('There is an Error!')
     }

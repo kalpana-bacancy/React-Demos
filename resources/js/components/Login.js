@@ -1,9 +1,10 @@
-import React, { Fragment, useRef } from 'react'
+import React, { Fragment, useRef, useState } from 'react'
 import ReactDOM from 'react-dom'
 import { Link, BrowserRouter, Routes, Route } from 'react-router-dom'
 import LoginValidation from './LoginValidation'
 import { useSelector, useDispatch } from 'react-redux'
 import { authActions } from '../store/auth'
+import { useApi } from '../config/useApi'
 
 const Login = () => {
   const dispatch = useDispatch()
@@ -13,34 +14,15 @@ const Login = () => {
   const onSubmitHandler = (e) => {
     e.preventDefault()
     if (Object.keys(errors).length === 0 && Object.keys(values).length !== 0) {
-      const requestOptions = {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          email: emailInput.current.value,
-          password: passwordInput.current.value,
-        }),
+      const body = {
+        email: emailInput.current.value,
+        password: passwordInput.current.value,
       }
-      fetch('http://localhost/laravel-react-js/api/login', requestOptions)
-        .then(async (response) => {
-          const isJson = response.headers
-            .get('content-type')
-            ?.includes('application/json')
-          const data = isJson && (await response.json())
-
-          // check for error response
-          if (!response.ok) {
-            // get error message from body or default to response status
-            const error = (data && data.message) || response.status
-            return Promise.reject(error)
-          } else {
-            dispatch(authActions.login(data.token))
-          }
-        })
-        .catch((error) => {
-          console.log(error)
-          console.error('There was an error!', error)
-        })
+      useApi('login', 'POST', body, false).then((data) => {
+        if (data.token) {
+          dispatch(authActions.login(data.token))
+        }
+      })
     } else {
       alert('There is an Error!')
     }

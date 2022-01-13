@@ -2,42 +2,21 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { productsActions } from '../../store/products'
 import { useNavigate, NavLink } from 'react-router-dom'
+import * as constants from '../../config/constants';
+import { useApi } from '../../config/useApi'
 
 const Product = (props) => {
   let navigate = useNavigate()
   const BearerToken = useSelector((state) => state.auth.token)
   const dispatch = useDispatch()
   const deleteProduct = () => {
-    const requestOptions = {
-      method: 'DELETE',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: 'Bearer ' + BearerToken,
-      },
-    }
-    fetch(
-      'http://localhost/laravel-react-js/api/products/delete/' + props.id,
-      requestOptions,
-    )
-      .then(async (response) => {
-        const isJson = response.headers
-          .get('content-type')
-          ?.includes('application/json')
-        const data = isJson && (await response.json())
-
-        // check for error response
-        if (!response.ok) {
-          // get error message from body or default to response status
-          const error = (data && data.message) || response.status
-          return Promise.reject(error)
-        }
+    useApi('products/delete/' + props.id, 'DELETE', false, BearerToken).then(
+      (data) => {
         alert('Product Deleted Sucessfully!')
         dispatch(productsActions.removeProducts({ id: props.id }))
         navigate('/products')
-      })
-      .catch((error) => {
-        console.error('There was an error!', error)
-      })
+      },
+    )
   }
   return (
     <div className="product">

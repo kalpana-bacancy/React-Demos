@@ -3,39 +3,18 @@ import './ProductsList.css'
 import { useSelector, Provider, useDispatch } from 'react-redux'
 import Product from './Product'
 import { productsActions } from '../../store/products'
+import * as constants from '../../config/constants'
+import { useApi } from '../../config/useApi'
 
 const ProductsList = () => {
   const dispatch = useDispatch()
   const BearerToken = useSelector((state) => state.auth.token)
   const [ProductsData, setProductsData] = useState([])
   useEffect(() => {
-    const requestOptions = {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: 'Bearer ' + BearerToken,
-      },
-    }
-    fetch('http://localhost/laravel-react-js/api/products', requestOptions)
-      .then(async (response) => {
-        const isJson = response.headers
-          .get('content-type')
-          ?.includes('application/json')
-        const data = isJson && (await response.json())
-
-        // check for error response
-        if (!response.ok) {
-          // get error message from body or default to response status
-          const error = (data && data.message) || response.status
-          return Promise.reject(error)
-        } else {
-          dispatch(productsActions.getProducts(data))
-          setProductsData(data)
-        }
-      })
-      .catch((error) => {
-        console.error('There was an error!', error)
-      })
+    useApi('products', 'GET', false, BearerToken).then((data) => {
+      dispatch(productsActions.getProducts(data))
+      setProductsData(data)
+    })
   }, [])
   return (
     <Fragment>

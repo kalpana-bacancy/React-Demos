@@ -14,34 +14,19 @@ import { authActions } from '../store/auth'
 import ProductsList from './Products/ProductList'
 import AddProduct from './Products/AddProduct'
 import EditProduct from './Products/EditProduct'
+import * as constants from '../config/constants'
+import { useApi } from '../config/useApi'
 
 function Example() {
   const dispatch = useDispatch()
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated)
+  const BearerToken = useSelector((state) => state.auth.token)
   const onLogoutHandler = (event) => {
-    const requestOptions = {
-      method: 'GET',
-      headers: { 'Content-Type': 'application/json' },
-    }
-    fetch('http://localhost/laravel-react-js/api/logout', requestOptions)
-      .then(async (response) => {
-        const isJson = response.headers
-          .get('content-type')
-          ?.includes('application/json')
-        const data = isJson && (await response.json())
-
-        // check for error response
-        if (!response.ok) {
-          // get error message from body or default to response status
-          const error = (data && data.message) || response.status
-          return Promise.reject(error)
-        } else {
-          dispatch(authActions.logout())
-        }
-      })
-      .catch((error) => {
-        console.error('There was an error!', error)
-      })
+    useApi('logout?token=' + BearerToken, 'GET', false, BearerToken).then(
+      () => {
+        dispatch(authActions.logout())
+      },
+    )
   }
   return (
     <Fragment>

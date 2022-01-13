@@ -10,7 +10,6 @@ const productsSlice = createSlice({
   reducers: {
     getProducts(state, action) {
       state.ProductsData = action.payload
-      console.log(state.ProductsData);
     },
     removeProducts(state, action) {
       state.ProductsData = state.ProductsData.filter(

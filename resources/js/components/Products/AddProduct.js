@@ -1,48 +1,24 @@
 import React, { Fragment } from 'react'
-import { useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import * as constants from '../../config/constants'
+import { useApi } from '../../config/useApi'
 
 const AddProduct = () => {
-  let navigate = useNavigate();
+  let navigate = useNavigate()
   const BearerToken = useSelector((state) => state.auth.token)
   const onSubmitHandler = (e) => {
     e.preventDefault()
-    const requestOptions = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: 'Bearer ' + BearerToken,
-      },
-      body: JSON.stringify({
-        name: e.target.elements.product_name.value,
-        sku: e.target.elements.sku.value,
-        price: e.target.elements.price.value,
-        quantity: e.target.elements.quantity.value,
-      }),
+    const body = {
+      name: e.target.elements.product_name.value,
+      sku: e.target.elements.sku.value,
+      price: e.target.elements.price.value,
+      quantity: e.target.elements.quantity.value,
     }
-    fetch(
-      'http://localhost/laravel-react-js/api/products/create',
-      requestOptions,
-    )
-      .then(async (response) => {
-        const isJson = response.headers
-          .get('content-type')
-          ?.includes('application/json')
-        const data = isJson && (await response.json())
-
-        // check for error response
-        if (!response.ok) {
-          // get error message from body or default to response status
-          const error = (data && data.message) || response.status
-          return Promise.reject(error)
-        }
-        alert('Product Added Sucessfully!')
-        navigate('/products')
-      })
-      .catch((error) => {
-        console.log(error)
-        console.error('There was an error!', error)
-      })
+    useApi('products/create', 'POST', body, BearerToken).then((data) => {
+      alert('Product Added Sucessfully!')
+      navigate('/products')
+    })
   }
   return (
     <Fragment>
